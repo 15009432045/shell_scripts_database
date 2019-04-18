@@ -25,7 +25,7 @@ tar xf /opt/redis-latest.tar.gz -C /opt/
 cd $(ls -ld /opt/redis* | awk -F" " 'NR==1{ print $NF }')
 
 # install depending software.
-yum -y groupinstall "Developemnt Tools"
+yum -y groupinstall "Development Tools"
 
 # configure redis.
 make
