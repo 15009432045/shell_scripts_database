@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 #
-# Author: bavdu
-# Email: bavduer@163.com
-# Date: 2019/04/18
-# Usage: init server computer.
 
 
 # check user.
-if [ $ID -eq 0 ];then
+if [ ! $ID ] || [ $ID -eq 0 ];then
   echo "this user is root."
 else
   id $USER | grep wheel
