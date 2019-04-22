@@ -41,7 +41,7 @@ if [ $? -eq 0 ];then
 	    mv /etc/my.cnf /etc/my.cnf.bak
         #cp -rf /usr/local/mysqld/mysql/mysql-test/include/default_mysqld.cnf /etc/my.cnf
 
-        cp -f /opt/my.cnf.bak /etc/my.cnf
+        \cp /opt/my.cnf.bak /etc/my.cnf
         /usr/local/mysqld/mysql/bin/mysqld --defaults-file=/etc/my.cnf --initialize --user='mysql'
         mysqld_safe --defaults-file=/etc/my.cnf &
 	    sleep 10s
