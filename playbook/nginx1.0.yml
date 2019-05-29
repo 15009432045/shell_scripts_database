@@ -1,0 +1,29 @@
+---
+- hosts: web-1
+  remote_user: root
+  tasks:
+    - name: isntall nginx
+      yum: name="{{packages}}"
+      vars:
+        packages:
+          - epel-release
+          - nginx
+    - name: copy nginx.conf and index.html 
+#      copy: src="/tmp/nginx.conf" dest="/etc/nginx/conf/nginx.conf" backup=yes
+      copy: 
+        src: "{{item.src}}" 
+        dest: "{{item.dest}}" 
+        backup: yes
+        owner: root
+        group: root
+        mode: 0644
+      with_items:
+        - { src: "/tmp/nginx.conf", dest: "/etc/nginx/nginx.conf" }
+        - { src: "/tmp/index.html", dest: "/usr/share/nginx/html" }
+      notify: reload nginx 
+    - name: start nginx service
+      service: name=nginx state=started
+      tags: start nginx
+  handlers:
+    - name: reload nginx
+      service: name=nginx state=restarted

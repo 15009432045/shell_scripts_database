@@ -1,0 +1,19 @@
+---
+- hosts: web-1
+  remote_user: root
+  vars:
+    IP: "{{ansible_ens33['ipv4']['address']}}"
+  tasks:
+    - name: backup hostname
+      shell: mv /etc/hosts /etc/hosts_bak
+    - name: 将ansible端的hosts复制到各自机器上
+      copy:
+        src: "{{item.src}}"
+        dest: "{{item.dest}}"
+        owner: root 
+        group: root 
+        mode: 0644
+      with_items:
+        - { src: "/tmp/hosts", dest: "/etc/hosts" }
+    - name: 在新的hosts文件后面追加各自机器内网ip和hostname
+      lineinfile: dest=/etc/hosts line="{{IP}} {{ansible_hostname}}"

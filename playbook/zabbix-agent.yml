@@ -1,0 +1,19 @@
+---
+- hosts: zabbix-agent
+  remote_user: root
+  tasks:
+    - name: copy zabbix-repo
+      copy: src=/root/zabbix-release-4.0-1.el7.noarch.rpm dest=/tmp/zabbix-release-4.0-1.el7.noarch.rpm
+    - name: install zabbix-repo 
+      shell: yum -y localinstall /tmp/zabbix-release-4.0-1.el7.noarch.rpm
+    - name: install zabbix-agent
+      yum: name=zabbix-agent,zabbix-sender state=present
+    - name: copy zabbix-agentd.conf
+      template: src=/tmp/zabbix_agentd.conf.j2 dest=/etc/zabbix/zabbix_agentd.conf backup=yes
+      notify: restart zabbix-agent
+    - name: start zabbix-agent and enabled
+      service: name=zabbix-agent state=started
+
+  handlers:
+    - name: restart zabbix-agent
+      service: name=zabbix-agent state=restarted
