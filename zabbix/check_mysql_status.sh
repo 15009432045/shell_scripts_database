@@ -10,7 +10,7 @@
 MYSQL_USER='zabbix'
 
 # 密码
-MYSQL_PWD='zxs142857.*'
+MYSQL_PWD='数据库密码'
 
 # 主机地址/IP
 MYSQL_HOST='localhost'
