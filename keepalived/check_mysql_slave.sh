@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# auth: braior
-# email: braior@163.com
-# github: https://github.com/braior
+# Author: braior
+# Email: braior@163.com
+# Github: https://github.com/braior
 
 export IP=`ifconfig | grep Ethernet -A1 | grep -v Link | awk -F[' ':]+ '{print $4}'`
 MYUSER=root
