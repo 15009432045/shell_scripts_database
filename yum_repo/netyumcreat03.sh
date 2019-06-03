@@ -1,5 +1,9 @@
 #!/usr/bin/bash
-#Athour   braior
+
+# Author: braior
+# Email: braior@163.com
+# Github: https://github.com/braior
+
 ping -c1 www.baidu.com &>/dev/null
 if [ $? -eq 0 ];then
 	:
