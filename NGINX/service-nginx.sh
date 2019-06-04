@@ -1,7 +1,10 @@
 #!/bin/sh
-#
+
+# Author: braior
+# Email: braior@163.com
+# Date: 2019/04/18
 # nginx - this script starts and stops the nginx daemon
-#
+
 # chkconfig:   - 85 15
 # description:  NGINX is an HTTP(S) server, HTTP(S) reverse \
 #               proxy and IMAP/POP3 proxy server
