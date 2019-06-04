@@ -9,7 +9,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/mys
 week=$(date +%w)
 days=$(date +%d)
 
-passwd="Zxs142857.*"
+passwd="passwd"
 mysql_bak_dir=/bak/mysql
 remote_bak_dir=/backup
 echo "mysql backup begin at $(date +%F-%T)." >>/log/backup_mysql.log
