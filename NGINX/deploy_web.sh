@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# Author: bavdu
-# Email: bavduer@163.com
+# Author: braior
+# Email: braior@163.com
 # Date: 2019/04/18
 # Usage: install nginx web service.
 
