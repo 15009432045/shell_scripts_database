@@ -59,7 +59,7 @@ if [ $? -eq 0 ];then
         chkconfig mysqld on
                 
 	    passwd=$(grep "password" /usr/local/mysqld/log/mysql_error.log |awk -F " " 'NR==1 {print $NF}')
-        mysql --connect-expired-password -uroot -p$passwd -e "alter user 'root'@'localhost' identified by 'Zxs142857.*';"
+        mysql --connect-expired-password -uroot -p$passwd -e "alter user 'root'@'localhost' identified by 'passwd';"
 	    
 	    if [ $? -eq 0 ];then
             printf "Successful modification of MySQL password!!!\n"
