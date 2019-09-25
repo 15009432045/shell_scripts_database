@@ -45,7 +45,7 @@ else
   fi
 fi
 
-sudo yum -y install vim net-tools wget ntpdate ShellCheck cmake make lftp
+sudo yum -y install vim net-tools wget ntpdate ShellCheck cmake make lftp bash-completion
 sudo yum -y groupinstall "Development Tools"
 
 
@@ -57,9 +57,9 @@ sudo sed -ri s/"#UseDNS yes"/"UseDNS no"/g /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
 # configure network config file.
-sudo cp /etc/sysconfig/network-scripts/ifcfg-$(ifconfig | awk -F":" 'NR==1{ print $1 }'){,.bak}
-sudo sed -ri '/IPV6*/d' /etc/sysconfig/network-scripts/ifcfg-$(ifconfig | awk -F":" 'NR==1{ print $1 }')
-sudo systemctl restart network
+# sudo cp /etc/sysconfig/network-scripts/ifcfg-$(ifconfig | awk -F":" 'NR==1{ print $1 }'){,.bak}
+# sudo sed -ri '/IPV6*/d' /etc/sysconfig/network-scripts/ifcfg-$(ifconfig | awk -F":" 'NR==1{ print $1 }')
+# sudo systemctl restart network
 
 
 
