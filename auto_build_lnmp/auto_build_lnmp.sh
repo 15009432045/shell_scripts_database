@@ -88,7 +88,7 @@ function setup_mysql_user() {
 function install_mysql() {
 	
 	echo "<?php
-\$link = mysql_connect('localhost', 'root', 'Zxs142857.*');
+\$link = mysql_connect('localhost', 'root', '123456');
 if (!\$link) {
 	die('Could not connect: ' . mysql_error());
 	}
