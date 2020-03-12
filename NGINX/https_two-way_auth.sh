@@ -5,7 +5,7 @@
 # Date: 2019.12.16
 
 CN_CA="root"
-CN="ukex.com"
+CN="xxx.com"
 CLIENT_PASS="123456"
 
 cd /root/nginx_ssl
