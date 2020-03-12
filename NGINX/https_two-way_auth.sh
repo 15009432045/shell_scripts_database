@@ -6,7 +6,7 @@
 
 CN_CA="root"
 CN="ukex.com"
-CLIENT_PASS="zKH1t9nVPjCihfjv"
+CLIENT_PASS="123456"
 
 cd /root/nginx_ssl
 # 1)创建根证私钥
